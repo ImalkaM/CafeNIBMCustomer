@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		55BB7C511519E9D8527D4701 /* Pods_CafeNIBMCustomer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0B64C5355A305E541668B9 /* Pods_CafeNIBMCustomer.framework */; };
 		AF923B0A2622AAD8001AD12C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF923B092622AAD8001AD12C /* AppDelegate.swift */; };
 		AF923B0C2622AAD8001AD12C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF923B0B2622AAD8001AD12C /* SceneDelegate.swift */; };
 		AF923B112622AAD8001AD12C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF923B0F2622AAD8001AD12C /* Main.storyboard */; };
@@ -24,6 +25,9 @@
 		AF923B152622AADB001AD12C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF923B172622AADB001AD12C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF923B232622B72C001AD12C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DC0B64C5355A305E541668B9 /* Pods_CafeNIBMCustomer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CafeNIBMCustomer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E059A1C711B40EC9AE1251B3 /* Pods-CafeNIBMCustomer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CafeNIBMCustomer.debug.xcconfig"; path = "Target Support Files/Pods-CafeNIBMCustomer/Pods-CafeNIBMCustomer.debug.xcconfig"; sourceTree = "<group>"; };
+		F57E01E1DF1AD4F3F8B4E80B /* Pods-CafeNIBMCustomer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CafeNIBMCustomer.release.xcconfig"; path = "Target Support Files/Pods-CafeNIBMCustomer/Pods-CafeNIBMCustomer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55BB7C511519E9D8527D4701 /* Pods_CafeNIBMCustomer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15D5E4DE8D659DEFF2FBBDCA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E059A1C711B40EC9AE1251B3 /* Pods-CafeNIBMCustomer.debug.xcconfig */,
+				F57E01E1DF1AD4F3F8B4E80B /* Pods-CafeNIBMCustomer.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		AF923AFD2622AAD8001AD12C = {
 			isa = PBXGroup;
 			children = (
 				AF923B082622AAD8001AD12C /* CafeNIBMCustomer */,
 				AF923B072622AAD8001AD12C /* Products */,
+				15D5E4DE8D659DEFF2FBBDCA /* Pods */,
+				C1B898B72E2C3DAAF76CC779 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +116,14 @@
 			path = "XIB ";
 			sourceTree = "<group>";
 		};
+		C1B898B72E2C3DAAF76CC779 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DC0B64C5355A305E541668B9 /* Pods_CafeNIBMCustomer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +131,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AF923B1A2622AADB001AD12C /* Build configuration list for PBXNativeTarget "CafeNIBMCustomer" */;
 			buildPhases = (
+				39982990D753A6CFB128FAAE /* [CP] Check Pods Manifest.lock */,
 				AF923B022622AAD8001AD12C /* Sources */,
 				AF923B032622AAD8001AD12C /* Frameworks */,
 				AF923B042622AAD8001AD12C /* Resources */,
+				FA9CFEEC50C03060677460C3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -163,6 +190,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		39982990D753A6CFB128FAAE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CafeNIBMCustomer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA9CFEEC50C03060677460C3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CafeNIBMCustomer/Pods-CafeNIBMCustomer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CafeNIBMCustomer/Pods-CafeNIBMCustomer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CafeNIBMCustomer/Pods-CafeNIBMCustomer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AF923B022622AAD8001AD12C /* Sources */ = {
@@ -315,6 +384,7 @@
 		};
 		AF923B1B2622AADB001AD12C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E059A1C711B40EC9AE1251B3 /* Pods-CafeNIBMCustomer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -333,6 +403,7 @@
 		};
 		AF923B1C2622AADB001AD12C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F57E01E1DF1AD4F3F8B4E80B /* Pods-CafeNIBMCustomer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

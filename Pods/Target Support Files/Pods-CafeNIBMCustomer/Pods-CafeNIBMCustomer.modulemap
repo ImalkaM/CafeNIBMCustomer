@@ -1,0 +1,6 @@
+framework module Pods_CafeNIBMCustomer {
+  umbrella header "Pods-CafeNIBMCustomer-umbrella.h"
+
+  export *
+  module * { export * }
+}
