@@ -56,15 +56,47 @@
 		AF923B082622AAD8001AD12C /* CafeNIBMCustomer */ = {
 			isa = PBXGroup;
 			children = (
+				AF923B202622ACF4001AD12C /* Model */,
+				AF923B1F2622ACEA001AD12C /* Controller */,
+				AF923B1E2622ACE0001AD12C /* Views */,
 				AF923B092622AAD8001AD12C /* AppDelegate.swift */,
 				AF923B0B2622AAD8001AD12C /* SceneDelegate.swift */,
 				AF923B0D2622AAD8001AD12C /* ViewController.swift */,
-				AF923B0F2622AAD8001AD12C /* Main.storyboard */,
 				AF923B122622AADB001AD12C /* Assets.xcassets */,
 				AF923B142622AADB001AD12C /* LaunchScreen.storyboard */,
 				AF923B172622AADB001AD12C /* Info.plist */,
 			);
 			path = CafeNIBMCustomer;
+			sourceTree = "<group>";
+		};
+		AF923B1E2622ACE0001AD12C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AF923B212622AD04001AD12C /* XIB  */,
+				AF923B0F2622AAD8001AD12C /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AF923B1F2622ACEA001AD12C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AF923B202622ACF4001AD12C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AF923B212622AD04001AD12C /* XIB  */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "XIB ";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
