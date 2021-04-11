@@ -27,6 +27,8 @@ class LoginViewController: UIViewController {
         if validateInput(){
             if let email = emailAddressField.text, let password = passwordField.text{
                 auhtenticateUser(email: email, password: password)
+                
+            
             }
         }
         else{
@@ -83,6 +85,7 @@ class LoginViewController: UIViewController {
                 self.present(alert, animated: true)
             }
             else{
+                self.performSegue(withIdentifier: K.loginToHomeSeauge, sender: self)
                 print("login success")
             }
         }

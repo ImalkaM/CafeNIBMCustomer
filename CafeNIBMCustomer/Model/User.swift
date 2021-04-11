@@ -12,7 +12,7 @@ struct User {
     var name:String
     var email:String
     var password:String
-    var phonenumber:Int
+    var phonenumber:String
 }
 
 struct FoodItem {

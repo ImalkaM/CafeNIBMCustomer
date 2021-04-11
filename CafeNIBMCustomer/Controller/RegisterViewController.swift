@@ -9,6 +9,10 @@ import UIKit
 import Firebase
 
 class RegisterViewController: UIViewController {
+    
+    let db = Firestore.firestore()
+    
+   
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
@@ -30,11 +34,12 @@ class RegisterViewController: UIViewController {
     
     @IBAction func signUpTapped(_ sender: UIButton) {
         
+        
         if validateFields(){
-            if let email = emailTextField.text,let password = passwordTextField.text{
+            if let email = emailTextField.text,let password = passwordTextField.text, let phoneNumber = phoneTextField.text{
                 registerUser(email: email, password: password)
                 
-                
+                createUserDocument(email: email, phoneNumber: phoneNumber)
             }
            
         }else{
@@ -61,6 +66,20 @@ class RegisterViewController: UIViewController {
                 let alert = UIAlertController(title: "Success", message:"User Registered Success!", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
                 self.present(alert, animated: true)
+            }
+        }
+    }
+    
+    func createUserDocument(email:String,phoneNumber:String){
+        
+        db.collection("users").addDocument(data: ["email" : email,
+                                                "phoneNumber" : phoneNumber
+        
+        ]){ err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully written!")
             }
         }
     }
