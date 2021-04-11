@@ -85,6 +85,9 @@ class LoginViewController: UIViewController {
                 self.present(alert, animated: true)
             }
             else{
+                let sesssionManager = SessionManager()
+                sesssionManager.saveUserLogin()
+                
                 self.performSegue(withIdentifier: K.loginToHomeSeauge, sender: self)
                 print("login success")
             }

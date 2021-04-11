@@ -12,12 +12,12 @@ class SessionManager {
     
     let userDeafualts = UserDefaults()
     
-    func saveUserLogin(user:User){
+    func saveUserLogin(){
         
         UserDefaults.standard.setValue(true, forKey: "Logged_IN")
     }
     
-    func clearUserState(user:User){
+    func clearUserState(){
         
         UserDefaults.standard.setValue(false, forKey: "Logged_IN")
     }
