@@ -29,6 +29,20 @@ class FoodViewController: UIViewController {
 
 extension FoodViewController: UITableViewDelegate{
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: K.FoodTableToFoodDetailsSeauge, sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let foodDescriptionViewController = segue.destination as! FoodDescriptionViewController
+        
+        if let indexPath = foodTable.indexPathForSelectedRow {
+            
+            foodDescriptionViewController.setupFoodDescritionView(foodItem: foodItemArray[indexPath.row])
+        }
+    }
+    
 }
 
 extension FoodViewController: UITableViewDataSource{
@@ -46,8 +60,6 @@ extension FoodViewController: UITableViewDataSource{
     
     
 }
-
-
 extension FoodViewController{
     
     func getFoodDetails(){

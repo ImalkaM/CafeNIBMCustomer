@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import Loaf
 
 class LoginViewController: UIViewController {
     
@@ -80,16 +81,13 @@ class LoginViewController: UIViewController {
         
         Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
             if let err =  error{
-                let alert = UIAlertController(title: "Error", message: err.localizedDescription, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-                self.present(alert, animated: true)
+                Loaf("\(err.localizedDescription)", state: .error, sender: self).show()
             }
             else{
                 let sesssionManager = SessionManager()
                 sesssionManager.saveUserLogin()
-                
                 self.performSegue(withIdentifier: K.loginToHomeSeauge, sender: self)
-                print("login success")
+               
             }
         }
     }

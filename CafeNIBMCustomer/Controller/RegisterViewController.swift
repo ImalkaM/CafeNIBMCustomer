@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import Loaf
 
 class RegisterViewController: UIViewController {
     
@@ -58,14 +59,10 @@ class RegisterViewController: UIViewController {
         
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             if let err =  error{
-                let alert = UIAlertController(title: "Error", message: err.localizedDescription, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-                self.present(alert, animated: true)
+                Loaf("\(err.localizedDescription)", state: .error, sender: self).show()
             }
             else{
-                let alert = UIAlertController(title: "Success", message:"User Registered Success!", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-                self.present(alert, animated: true)
+                Loaf("User Registered successfully", state: .success, sender: self).show()
             }
         }
     }
