@@ -15,6 +15,8 @@
 		AF923B162622AADB001AD12C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF923B142622AADB001AD12C /* LaunchScreen.storyboard */; };
 		AF923B242622B72C001AD12C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF923B232622B72C001AD12C /* LoginViewController.swift */; };
 		AF923B3A2622BCCE001AD12C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF923B392622BCCE001AD12C /* GoogleService-Info.plist */; };
+		AF923B3F2622BDC3001AD12C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF923B3E2622BDC3001AD12C /* RegisterViewController.swift */; };
+		AF923B422622BFA3001AD12C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF923B412622BFA3001AD12C /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		AF923B172622AADB001AD12C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF923B232622B72C001AD12C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AF923B392622BCCE001AD12C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AF923B3E2622BDC3001AD12C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		AF923B412622BFA3001AD12C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DC0B64C5355A305E541668B9 /* Pods_CafeNIBMCustomer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CafeNIBMCustomer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E059A1C711B40EC9AE1251B3 /* Pods-CafeNIBMCustomer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CafeNIBMCustomer.debug.xcconfig"; path = "Target Support Files/Pods-CafeNIBMCustomer/Pods-CafeNIBMCustomer.debug.xcconfig"; sourceTree = "<group>"; };
 		F57E01E1DF1AD4F3F8B4E80B /* Pods-CafeNIBMCustomer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CafeNIBMCustomer.release.xcconfig"; path = "Target Support Files/Pods-CafeNIBMCustomer/Pods-CafeNIBMCustomer.release.xcconfig"; sourceTree = "<group>"; };
@@ -100,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				AF923B232622B72C001AD12C /* LoginViewController.swift */,
+				AF923B3E2622BDC3001AD12C /* RegisterViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -107,6 +112,7 @@
 		AF923B202622ACF4001AD12C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AF923B412622BFA3001AD12C /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -244,6 +250,8 @@
 				AF923B242622B72C001AD12C /* LoginViewController.swift in Sources */,
 				AF923B0A2622AAD8001AD12C /* AppDelegate.swift in Sources */,
 				AF923B0C2622AAD8001AD12C /* SceneDelegate.swift in Sources */,
+				AF923B422622BFA3001AD12C /* User.swift in Sources */,
+				AF923B3F2622BDC3001AD12C /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
