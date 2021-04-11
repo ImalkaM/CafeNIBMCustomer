@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "download.jpeg",
+      "filename" : "burger.jpeg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "burger@2x.jpeg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "burger@3x.jpeg",
       "idiom" : "universal",
       "scale" : "3x"
     }

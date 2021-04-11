@@ -125,7 +125,7 @@
         <!--Food-->
         <scene sceneID="tnY-Lv-siG">
             <objects>
-                <viewController id="Kk7-yg-L2n" sceneMemberID="viewController">
+                <viewController id="Kk7-yg-L2n" customClass="FoodViewController" customModule="CafeNIBMCustomer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hD7-dr-MGN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -133,9 +133,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hCu-Yo-C2l">
                                 <rect key="frame" x="16" y="98" width="343" height="496"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rYA-ds-f0w">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" estimatedRowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rYA-ds-f0w">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="496"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="Kk7-yg-L2n" id="4I3-0G-6i3"/>
+                                            <outlet property="delegate" destination="Kk7-yg-L2n" id="p61-Ye-bFZ"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
@@ -177,10 +181,28 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Food" image="archivebox.circle.fill" catalog="system" id="ZDO-Pq-lfC"/>
+                    <connections>
+                        <outlet property="foodTable" destination="rYA-ds-f0w" id="KvI-Bc-Vup"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i1a-8x-rvL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1880.8" y="-743.47826086956525"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="4qB-mP-1eN">
+            <objects>
+                <viewController id="JyI-yx-l5V" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="s6V-xl-H2w">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Xw4-mH-XJ6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VLb-WW-T6c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2599" y="-743"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="dky-P3-PON">
