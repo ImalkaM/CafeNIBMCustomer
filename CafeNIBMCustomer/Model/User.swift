@@ -19,6 +19,7 @@ struct FoodItem {
     var id:String
     var foodName:String
     var foodDescription:String
+    var category:String
     var foodPrice:Double
     var discount:Int
     var image:String
