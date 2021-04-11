@@ -14,15 +14,17 @@ class FoodViewController: UIViewController {
 
     @IBOutlet weak var foodTable: UITableView!
     
+    var foodItemArray:[FoodItem] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         foodTable.register(UINib(nibName: K.nibNameFoodTable, bundle: nil), forCellReuseIdentifier: K.foodTableCell)
         
         ref = Database.database().reference()
+        
+        getFoodDetails()
     }
-    
-
 }
 
 extension FoodViewController: UITableViewDelegate{
@@ -31,16 +33,47 @@ extension FoodViewController: UITableViewDelegate{
 
 extension FoodViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return foodItemArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.foodTableCell, for: indexPath) as! FoodTableViewCell
         
-        //cell.setupView(foodItem: foodItem[indexPath.row])
+        cell.setupView(foodItem: foodItemArray[indexPath.row])
         
         return cell
     }
     
     
+}
+
+
+extension FoodViewController{
+    
+    func getFoodDetails(){
+        ref.child("foodItems").observe(.value, with: {snapshot in
+        
+            if let data = snapshot.value{
+                if let fooditems = data as? [String: Any]{
+                    for items in fooditems{
+                        if let foodInfo = items.value as? [String: Any] {
+                            
+                            let singleFoodItem = FoodItem(id: "",
+                                                          foodName: foodInfo["name"] as! String,
+                                                          foodDescription: foodInfo["description"] as! String,
+                                                          category: foodInfo["category"] as! String,
+                                                          foodPrice: foodInfo["price"] as! Double,
+                                                          discount: foodInfo["discount"] as! Int,
+                                                          image: foodInfo["image"] as! String)
+                            
+                            self.foodItemArray.append(singleFoodItem)
+                            print(singleFoodItem)
+                        }
+                    }
+                    
+                    self.foodTable.reloadData()
+                }
+            }
+        })
+    }
 }

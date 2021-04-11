@@ -11,6 +11,7 @@ pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
 pod 'Firebase/Database'
 pod 'Kingfisher'
+pod 'Loaf'
 
 
 end
