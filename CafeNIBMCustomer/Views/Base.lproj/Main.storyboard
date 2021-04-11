@@ -106,37 +106,65 @@
             </objects>
             <point key="canvasLocation" x="-4" y="76.911544227886068"/>
         </scene>
-        <!--Item 2-->
+        <!--Order-->
         <scene sceneID="fEN-9D-oO5">
             <objects>
                 <viewController id="bhr-dL-U7a" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aJN-7A-FWd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="QZQ-km-5cG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="mvb-VN-D5A"/>
+                    <tabBarItem key="tabBarItem" title="Order" image="menubar.dock.rectangle.badge.record" catalog="system" id="mvb-VN-D5A"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oif-xS-TiO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1882" y="-10"/>
         </scene>
-        <!--Item 1-->
+        <!--Food-->
         <scene sceneID="tnY-Lv-siG">
             <objects>
                 <viewController id="Kk7-yg-L2n" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hD7-dr-MGN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hCu-Yo-C2l">
+                                <rect key="frame" x="0.0" y="146" width="375" height="472"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="BPj-Sw-uDB">
+                                <rect key="frame" x="16" y="11" width="108" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lnD-hy-Gzj">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="8s1-jA-e3l"/>
+                                            <constraint firstAttribute="width" constant="80" id="jZa-Vu-dbM"/>
+                                        </constraints>
+                                        <state key="normal" title="Cart"/>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cart" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="u9G-nx-3eM">
+                                        <rect key="frame" x="85" y="1.5" width="23" height="78.5"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="JhI-WE-YlN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hCu-Yo-C2l" firstAttribute="bottom" secondItem="JhI-WE-YlN" secondAttribute="bottom" id="2Vl-IS-wrj"/>
+                            <constraint firstItem="hCu-Yo-C2l" firstAttribute="trailing" secondItem="JhI-WE-YlN" secondAttribute="trailing" id="5KY-kt-wJI"/>
+                            <constraint firstItem="hCu-Yo-C2l" firstAttribute="leading" secondItem="JhI-WE-YlN" secondAttribute="leading" id="aph-dy-Eqp"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="ZDO-Pq-lfC"/>
+                    <tabBarItem key="tabBarItem" title="Food" image="archivebox.circle.fill" catalog="system" id="ZDO-Pq-lfC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i1a-8x-rvL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1882" y="-743"/>
+            <point key="canvasLocation" x="1880.8" y="-743.47826086956525"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="dky-P3-PON">
@@ -151,6 +179,7 @@
                     <connections>
                         <segue destination="Kk7-yg-L2n" kind="relationship" relationship="viewControllers" id="Td7-lu-w5i"/>
                         <segue destination="bhr-dL-U7a" kind="relationship" relationship="viewControllers" id="4K9-g0-kqd"/>
+                        <segue destination="Wx4-Ay-9e9" kind="relationship" relationship="viewControllers" id="P9E-9x-ugd"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fjq-Hg-DK5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -260,14 +289,40 @@
             </objects>
             <point key="canvasLocation" x="966" y="529"/>
         </scene>
+        <!--Account-->
+        <scene sceneID="ukl-gz-UiI">
+            <objects>
+                <viewController id="Wx4-Ay-9e9" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bMZ-RJ-AeL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="NAI-O5-kX6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Account" image="rosette" catalog="system" id="fy2-NN-qzn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9oh-QY-Isy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1881" y="-1412"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vjU-Bh-vt0"/>
+        <segue reference="YDz-Is-mXg"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="archivebox.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="cart" catalog="system" width="128" height="102"/>
         <image name="kicthenLogo" width="48" height="48"/>
+        <image name="menubar.dock.rectangle.badge.record" catalog="system" width="128" height="95"/>
+        <image name="rosette" catalog="system" width="106" height="128"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

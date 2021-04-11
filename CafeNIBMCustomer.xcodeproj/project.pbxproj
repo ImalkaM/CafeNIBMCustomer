@@ -18,6 +18,7 @@
 		AF923B3F2622BDC3001AD12C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF923B3E2622BDC3001AD12C /* RegisterViewController.swift */; };
 		AF923B422622BFA3001AD12C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF923B412622BFA3001AD12C /* User.swift */; };
 		AF923B462622D7E0001AD12C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF923B452622D7E0001AD12C /* Constants.swift */; };
+		AF923B4A2622E84E001AD12C /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF923B492622E84E001AD12C /* SessionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		AF923B3E2622BDC3001AD12C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		AF923B412622BFA3001AD12C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AF923B452622D7E0001AD12C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		AF923B492622E84E001AD12C /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		DC0B64C5355A305E541668B9 /* Pods_CafeNIBMCustomer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CafeNIBMCustomer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E059A1C711B40EC9AE1251B3 /* Pods-CafeNIBMCustomer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CafeNIBMCustomer.debug.xcconfig"; path = "Target Support Files/Pods-CafeNIBMCustomer/Pods-CafeNIBMCustomer.debug.xcconfig"; sourceTree = "<group>"; };
 		F57E01E1DF1AD4F3F8B4E80B /* Pods-CafeNIBMCustomer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CafeNIBMCustomer.release.xcconfig"; path = "Target Support Files/Pods-CafeNIBMCustomer/Pods-CafeNIBMCustomer.release.xcconfig"; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				AF923B452622D7E0001AD12C /* Constants.swift */,
+				AF923B492622E84E001AD12C /* SessionManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				AF923B422622BFA3001AD12C /* User.swift in Sources */,
 				AF923B3F2622BDC3001AD12C /* RegisterViewController.swift in Sources */,
 				AF923B462622D7E0001AD12C /* Constants.swift in Sources */,
+				AF923B4A2622E84E001AD12C /* SessionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
