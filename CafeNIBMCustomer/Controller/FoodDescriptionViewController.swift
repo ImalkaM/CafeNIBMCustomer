@@ -39,10 +39,7 @@ class FoodDescriptionViewController: UIViewController {
         }
     }
     
-
-
     @IBAction func backButtonTapped(_ sender: UIButton) {
-        
         
         dismiss(animated: true, completion: nil)
     }

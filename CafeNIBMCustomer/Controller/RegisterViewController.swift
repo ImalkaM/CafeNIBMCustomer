@@ -12,22 +12,23 @@ import Loaf
 class RegisterViewController: UIViewController {
     
     let db = Firestore.firestore()
+    var ref: DatabaseReference!
     
-   
-
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var userNameField: UITextField!
     
     @IBOutlet weak var signUpButton: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         registerTextFieldSizeSetup()
+        ref = Database.database().reference()
     }
-
+    
     @IBAction func signInTapped(_ sender: UIButton) {
         
         dismiss(animated: true, completion: nil)
@@ -36,23 +37,25 @@ class RegisterViewController: UIViewController {
     @IBAction func signUpTapped(_ sender: UIButton) {
         
         
-        if validateFields(){
-            if let email = emailTextField.text,let password = passwordTextField.text, let phoneNumber = phoneTextField.text{
-                registerUser(email: email, password: password)
-                
-                createUserDocument(email: email, phoneNumber: phoneNumber)
-            }
-           
-        }else{
-            emailTextField.text = ""
-            emailTextField.attributedPlaceholder = NSAttributedString(string: "Please check your Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
-            
-            phoneTextField.text = ""
-            phoneTextField.attributedPlaceholder = NSAttributedString(string: "Please check your Phonenumber", attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
-            
-            passwordTextField.text = ""
-            passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password must ne 8  characters", attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
+        if !FieldValidator.isValidEmail(emailTextField.text ?? ""){
+            Loaf("Invalid email address", state: .error, sender: self).show()
+            return
         }
+        
+        
+        if !FieldValidator.isValidPassword(pass: passwordTextField.text ?? "", minLength: 8, maxLength: 20){
+            
+            Loaf("Invalid password", state: .error, sender: self).show()
+            return
+            
+        }
+        if !FieldValidator.isValidMobileNo(phoneTextField.text ?? ""){
+            
+            Loaf("Invalid mobile no", state: .error, sender: self).show()
+            return
+            
+        }
+        registerUser(email: emailTextField.text!, password: passwordTextField.text!)
     }
     
     func registerUser(email:String,password:String){
@@ -62,48 +65,32 @@ class RegisterViewController: UIViewController {
                 Loaf("\(err.localizedDescription)", state: .error, sender: self).show()
             }
             else{
+                let user = User(name: self.userNameField.text!, email: self.emailTextField.text!, password: self.passwordTextField.text!, phonenumber: self.phoneTextField.text!)
+                self.createUser(user: user)
+            }
+        }
+    }
+    func createUser(user:User){
+        
+        let userData = [
+            "userName" : user.name,
+            "userEmail" : user.email,
+            "userPhone" : user.phonenumber,
+            "userPassword" : user.password,
+        ]
+        self.ref.child("users").child(user.email
+                                        .replacingOccurrences(of: "@", with: "_")
+                                        .replacingOccurrences(of: ".", with: "_")
+        ).setValue(userData){ (error, ref) in
+            if let err =  error{
+                Loaf("\(err.localizedDescription)", state: .error, sender: self).show()
+            }
+            else{
                 Loaf("User Registered successfully", state: .success, sender: self).show()
+                self.dismiss(animated: true, completion: nil)
             }
         }
     }
-    
-    func createUserDocument(email:String,phoneNumber:String){
-        
-        db.collection("users").addDocument(data: ["email" : email,
-                                                "phoneNumber" : phoneNumber
-        
-        ]){ err in
-            if let err = err {
-                print("Error writing document: \(err)")
-            } else {
-                print("Document successfully written!")
-            }
-        }
-    }
-    
-    func validateFields() ->Bool{
-        
-        if let email = emailTextField.text,let phoneNumber = phoneTextField.text,let password = passwordTextField.text{
-            
-            if email.count < 5{
-               
-                return false
-            }
-            if phoneNumber.count < 10{
-               
-                return false
-            }
-            if password.count < 8{
-               
-                return false
-            }
-            
-            return true
-        }
-        
-        return false
-    }
-    
     
     func registerTextFieldSizeSetup(){
         emailTextField.addConstraint(emailTextField.heightAnchor.constraint(equalToConstant: 50))
@@ -114,11 +101,11 @@ class RegisterViewController: UIViewController {
         
         passwordTextField.addConstraint(passwordTextField.heightAnchor.constraint(equalToConstant: 50))
         passwordTextField.addConstraint(passwordTextField.widthAnchor.constraint(equalToConstant: 270))
-       
+        
         
         signUpButton.layer.cornerRadius = 25
         signUpButton.addConstraint(signUpButton.heightAnchor.constraint(equalToConstant: 50))
         
     }
-
+    
 }

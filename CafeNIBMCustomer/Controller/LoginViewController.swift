@@ -25,45 +25,21 @@ class LoginViewController: UIViewController {
     
     @IBAction func signInPressed(_ sender: UIButton) {
         
-        if validateInput(){
-            if let email = emailAddressField.text, let password = passwordField.text{
-                auhtenticateUser(email: email, password: password)
-                
+        if !FieldValidator.isValidEmail(emailAddressField.text ?? ""){
+            Loaf("Invalid email address", state: .error, sender: self).show()
+            return
+        }
+        
+        
+        if !FieldValidator.isValidPassword(pass: passwordField.text ?? "", minLength: 8, maxLength: 20){
             
-            }
-        }
-        else{
-            emailAddressField.text = ""
-            emailAddressField.attributedPlaceholder = NSAttributedString(string: "Please check your Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
-            passwordField.text = ""
-            passwordField.attributedPlaceholder = NSAttributedString(string: "Please check your Password", attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
-        }
-    }
-    
-    func validateInput() -> Bool{
-        
-        guard let email = emailAddressField.text else {
-           
-            return false
-           
-        }
-        guard let password = passwordField.text else {
+            Loaf("Invalid password", state: .error, sender: self).show()
+            return
             
-            return false
         }
         
-        if email.count < 5{
-           
-            return false
-        }
-        if password.count < 8{
-           
-            return false
-        }
-        
-        return true
+        auhtenticateUser(email: emailAddressField.text!, password: passwordField.text!)
     }
-    
     func registerTextFieldSizeSetup(){
         emailAddressField.addConstraint(emailAddressField.heightAnchor.constraint(equalToConstant: 50))
         emailAddressField.addConstraint(emailAddressField.widthAnchor.constraint(equalToConstant: 270))
@@ -87,7 +63,7 @@ class LoginViewController: UIViewController {
                 let sesssionManager = SessionManager()
                 sesssionManager.saveUserLogin()
                 self.performSegue(withIdentifier: K.loginToHomeSeauge, sender: self)
-               
+                
             }
         }
     }
