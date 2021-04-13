@@ -17,6 +17,7 @@ class FoodViewController: UIViewController {
     var foodItemArray:[FoodItem] = []
     
     override func viewDidLoad() {
+       
         super.viewDidLoad()
 
         foodTable.register(UINib(nibName: K.nibNameFoodTable, bundle: nil), forCellReuseIdentifier: K.foodTableCell)
@@ -26,14 +27,14 @@ class FoodViewController: UIViewController {
         getFoodDetails()
     }
     
-
-
 }
 
 extension FoodViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: K.FoodTableToFoodDetailsSeauge, sender: self)
+        if tableView == foodTable{
+            performSegue(withIdentifier: K.FoodTableToFoodDetailsSeauge, sender: self)
+        }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        
@@ -64,6 +65,8 @@ extension FoodViewController: UITableViewDataSource{
     
 }
 extension FoodViewController{
+    
+    
     
     func getFoodDetails(){
         ref.child("foodItems").observe(.value, with: {snapshot in

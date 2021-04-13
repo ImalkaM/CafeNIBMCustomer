@@ -27,6 +27,8 @@
 		AF923BAB2623599E001AD12C /* CartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF923BA92623599E001AD12C /* CartTableViewCell.xib */; };
 		AF923BD5262429BF001AD12C /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF923BD4262429BF001AD12C /* CartViewController.swift */; };
 		AF923BE826246447001AD12C /* ValidatorFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF923BE726246447001AD12C /* ValidatorFields.swift */; };
+		AF923BEC262561A2001AD12C /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF923BEB262561A2001AD12C /* AccountViewController.swift */; };
+		AF923BEF2625657F001AD12C /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF923BEE2625657F001AD12C /* LaunchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		AF923BA92623599E001AD12C /* CartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartTableViewCell.xib; sourceTree = "<group>"; };
 		AF923BD4262429BF001AD12C /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		AF923BE726246447001AD12C /* ValidatorFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorFields.swift; sourceTree = "<group>"; };
+		AF923BEB262561A2001AD12C /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		AF923BEE2625657F001AD12C /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		DC0B64C5355A305E541668B9 /* Pods_CafeNIBMCustomer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CafeNIBMCustomer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E059A1C711B40EC9AE1251B3 /* Pods-CafeNIBMCustomer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CafeNIBMCustomer.debug.xcconfig"; path = "Target Support Files/Pods-CafeNIBMCustomer/Pods-CafeNIBMCustomer.debug.xcconfig"; sourceTree = "<group>"; };
 		F57E01E1DF1AD4F3F8B4E80B /* Pods-CafeNIBMCustomer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CafeNIBMCustomer.release.xcconfig"; path = "Target Support Files/Pods-CafeNIBMCustomer/Pods-CafeNIBMCustomer.release.xcconfig"; sourceTree = "<group>"; };
@@ -129,6 +133,8 @@
 				AF923B512622EF45001AD12C /* FoodViewController.swift */,
 				AF923B90262337BD001AD12C /* FoodDescriptionViewController.swift */,
 				AF923BD4262429BF001AD12C /* CartViewController.swift */,
+				AF923BEB262561A2001AD12C /* AccountViewController.swift */,
+				AF923BEE2625657F001AD12C /* LaunchViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -144,10 +150,8 @@
 		AF923B212622AD04001AD12C /* XIB  */ = {
 			isa = PBXGroup;
 			children = (
-				AF923B4C2622EEB4001AD12C /* FoodTableViewCell.swift */,
-				AF923B4D2622EEB4001AD12C /* FoodTableViewCell.xib */,
-				AF923BA82623599E001AD12C /* CartTableViewCell.swift */,
-				AF923BA92623599E001AD12C /* CartTableViewCell.xib */,
+				AF923BF22625738C001AD12C /* CartTable XIB */,
+				AF923BF126257378001AD12C /* FoodTable XIB */,
 			);
 			path = "XIB ";
 			sourceTree = "<group>";
@@ -160,6 +164,24 @@
 				AF923BE726246447001AD12C /* ValidatorFields.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		AF923BF126257378001AD12C /* FoodTable XIB */ = {
+			isa = PBXGroup;
+			children = (
+				AF923B4C2622EEB4001AD12C /* FoodTableViewCell.swift */,
+				AF923B4D2622EEB4001AD12C /* FoodTableViewCell.xib */,
+			);
+			path = "FoodTable XIB";
+			sourceTree = "<group>";
+		};
+		AF923BF22625738C001AD12C /* CartTable XIB */ = {
+			isa = PBXGroup;
+			children = (
+				AF923BA82623599E001AD12C /* CartTableViewCell.swift */,
+				AF923BA92623599E001AD12C /* CartTableViewCell.xib */,
+			);
+			path = "CartTable XIB";
 			sourceTree = "<group>";
 		};
 		C1B898B72E2C3DAAF76CC779 /* Frameworks */ = {
@@ -288,7 +310,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF923B242622B72C001AD12C /* LoginViewController.swift in Sources */,
+				AF923BEF2625657F001AD12C /* LaunchViewController.swift in Sources */,
 				AF923B0A2622AAD8001AD12C /* AppDelegate.swift in Sources */,
+				AF923BEC262561A2001AD12C /* AccountViewController.swift in Sources */,
 				AF923B0C2622AAD8001AD12C /* SceneDelegate.swift in Sources */,
 				AF923B422622BFA3001AD12C /* User.swift in Sources */,
 				AF923BD5262429BF001AD12C /* CartViewController.swift in Sources */,

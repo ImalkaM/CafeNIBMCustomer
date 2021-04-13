@@ -19,6 +19,8 @@ struct K {
     static let cartTableCell = "CartTableCell"
     static let FoodTableToFoodDetailsSeauge = "FoodTableToFoodDetails"
     static let FooddetailsToHomeUnwindSeauge = "FoodDetailsToHome"
+    static let launchToHomeSeauge = "LaunchToHome"
+    static let launchToLogin = "LaunchToLogin"
    
     struct FStoreCart {
         static let collectionNameCartTable = "CartCell"
