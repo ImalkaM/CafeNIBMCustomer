@@ -21,8 +21,6 @@ struct K {
     static let FooddetailsToHomeUnwindSeauge = "FoodDetailsToHome"
     static let launchToHomeSeauge = "LaunchToHome"
     static let launchToLogin = "LaunchToLogin"
-   
-    
     
     struct FStoreCart {
         static let collectionNameCartTable = "CartCell"

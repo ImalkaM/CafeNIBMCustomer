@@ -34,8 +34,15 @@ struct CartItem {
     var itemTotal: Double {
         return Double(itemCount) *  itemPrice
     }
+    
+
 //    var discountedPrice: Double {
 //        return itemPrice - (itemPrice * (Double(discount)/100))
 //    }
 }
 
+struct Order {
+    var orderID: String = ""
+    var orderStatus:String = ""
+    var orderTotal:Double = 0.0
+}

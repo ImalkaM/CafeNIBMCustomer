@@ -165,18 +165,45 @@
         <!--Order-->
         <scene sceneID="fEN-9D-oO5">
             <objects>
-                <viewController id="bhr-dL-U7a" sceneMemberID="viewController">
+                <viewController id="bhr-dL-U7a" customClass="OrderViewController" customModule="CafeNIBMCustomer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aJN-7A-FWd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDB-76-hNL">
+                                <rect key="frame" x="16" y="20" width="50.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" systemColor="systemOrangeColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3x2-NN-3lA">
+                                <rect key="frame" x="16" y="49" width="343" height="549"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="bhr-dL-U7a" id="PXJ-pB-FQk"/>
+                                    <outlet property="delegate" destination="bhr-dL-U7a" id="dzR-0a-ERM"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="QZQ-km-5cG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DDB-76-hNL" firstAttribute="top" secondItem="QZQ-km-5cG" secondAttribute="top" constant="20" id="adQ-Uk-LGd"/>
+                            <constraint firstItem="3x2-NN-3lA" firstAttribute="leading" secondItem="QZQ-km-5cG" secondAttribute="leading" constant="16" id="eI0-Vv-v46"/>
+                            <constraint firstItem="DDB-76-hNL" firstAttribute="leading" secondItem="QZQ-km-5cG" secondAttribute="leading" constant="16" id="eNN-xu-lFc"/>
+                            <constraint firstItem="3x2-NN-3lA" firstAttribute="centerX" secondItem="aJN-7A-FWd" secondAttribute="centerX" id="f8U-1O-UUr"/>
+                            <constraint firstItem="3x2-NN-3lA" firstAttribute="top" secondItem="DDB-76-hNL" secondAttribute="bottom" constant="5" id="mqv-Si-uv6"/>
+                            <constraint firstItem="QZQ-km-5cG" firstAttribute="bottom" secondItem="3x2-NN-3lA" secondAttribute="bottom" constant="20" id="sfF-Jx-CpH"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Order" image="menubar.dock.rectangle.badge.record" catalog="system" id="mvb-VN-D5A"/>
+                    <connections>
+                        <outlet property="orderTable" destination="3x2-NN-3lA" id="14o-5s-9jK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oif-xS-TiO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1882" y="-10"/>
+            <point key="canvasLocation" x="1880.8" y="-10.344827586206897"/>
         </scene>
         <!--Food-->
         <scene sceneID="tnY-Lv-siG">

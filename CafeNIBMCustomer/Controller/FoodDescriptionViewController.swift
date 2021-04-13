@@ -10,8 +10,6 @@ import  Kingfisher
 
 class FoodDescriptionViewController: UIViewController {
     
-    
-    
     @IBOutlet weak var foodImage: UIImageView!
     @IBOutlet weak var foodNameLabel: UILabel!
     @IBOutlet weak var offerLabel: UILabel!
@@ -66,7 +64,6 @@ class FoodDescriptionViewController: UIViewController {
         foodDescriptionItem.foodPrice = foodItem.foodPrice
         foodDescriptionItem.image = foodItem.image
         foodDescriptionItem.discount = foodItem.discount
-        
         
     }
 

@@ -6,11 +6,17 @@
 //
 
 import UIKit
+import Firebase
+import Loaf
 
 class CartViewController: UIViewController {
 
     @IBOutlet weak var cartTableView: UITableView!
     @IBOutlet weak var totalPriceLabel: UILabel!
+    
+    var ref: DatabaseReference!
+    
+    let sessionMGR = SessionManager()
     
     var cartItems:[CartItem] = []
     
@@ -22,6 +28,8 @@ class CartViewController: UIViewController {
         self.cartItems = CartHandler.getCartItems()
         cartTableView.register(UINib(nibName: K.nibNameCartTable, bundle: nil), forCellReuseIdentifier: K.cartTableCell)
         totalPriceLabel.text = String(calTotal())
+        
+        ref = Database.database().reference()
     }
     
 
@@ -30,6 +38,8 @@ class CartViewController: UIViewController {
     }
     
     @IBAction func purchaseButtontapped(_ sender: UIButton) {
+        
+        saveOrder()
     }
     
 }
@@ -90,6 +100,42 @@ extension CartViewController: CartItemDelegate {
         }
         
         return tempTotal
+    }
+}
+extension CartViewController{
+    
+    func saveOrder(){
+        
+        var orderData: [String: Any] = [:]
+        var foodItemInfo:[String:Any] = [:]
+        
+        for index in 0..<cartItems.count{
+            foodItemInfo.removeAll()
+            foodItemInfo["foodName"] = cartItems[index].itemName
+            foodItemInfo["qunatity"] = cartItems[index].itemCount
+            foodItemInfo["foodPrice"] = cartItems[index].itemTotal
+            orderData["\(index)"] = foodItemInfo
+        }
+        
+        var order:[String:Any] = [:]
+        order["status"] = "Pending"
+        order["orderItems"] = orderData
+        
+        self.ref.child("orders").child(sessionMGR.getUserData().email
+                                        .replacingOccurrences(of: "@", with: "_")
+                                        .replacingOccurrences(of: ".", with: "_")
+         ).childByAutoId()
+        .setValue(order){ (error, ref) in
+            if let err =  error{
+                Loaf("\(err.localizedDescription)", state: .error, sender: self).show()
+            }
+            else{
+                Loaf("Order added successfully", state: .success, sender: self).show()
+                CartHandler.clearCart()
+                self.cartTableView.reloadData()
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
     }
 }
 
