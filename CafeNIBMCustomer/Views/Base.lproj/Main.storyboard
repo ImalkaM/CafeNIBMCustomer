@@ -261,8 +261,8 @@
                                 <rect key="frame" x="16" y="71.5" width="343" height="502.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="at1-2z-YaQ" id="Ccx-Sd-k08"/>
-                                    <outlet property="delegate" destination="at1-2z-YaQ" id="SPF-Cs-hoQ"/>
+                                    <outlet property="dataSource" destination="at1-2z-YaQ" id="izI-lX-57x"/>
+                                    <outlet property="delegate" destination="at1-2z-YaQ" id="aXW-d2-lv9"/>
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GuD-YY-dQu">
@@ -280,6 +280,11 @@
                                 <state key="normal" title="Purchase">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="addtoCartTapped:" destination="JyI-yx-l5V" eventType="touchUpInside" id="KNS-5b-YfQ"/>
                                     <action selector="purchaseButtontapped:" destination="at1-2z-YaQ" eventType="touchUpInside" id="mQW-Bd-giB"/>
@@ -373,6 +378,11 @@
                                 <state key="normal" title="Add to cart">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="addtoCartTapped:" destination="JyI-yx-l5V" eventType="touchUpInside" id="Ovl-sP-oCp"/>
                                     <action selector="signInPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U7u-vQ-ruJ"/>

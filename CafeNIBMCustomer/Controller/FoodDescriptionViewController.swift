@@ -22,6 +22,8 @@ class FoodDescriptionViewController: UIViewController {
     
     var foodDescriptionItem:FoodItem = FoodItem(id: "", foodName: "", foodDescription: "", category: "", foodPrice: 0.0, discount: 0, image: "")
     
+    var cartItem:CartItem = CartItem(itemName: "", itemImgRes: "", discount: 0, itemPrice: 0, itemCount: 0)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -46,7 +48,15 @@ class FoodDescriptionViewController: UIViewController {
     
     @IBAction func addtoCartTapped(_ sender: UIButton) {
         
+        cartItem.itemName = foodDescriptionItem.foodName
+        cartItem.itemImgRes = foodDescriptionItem.image
+        cartItem.discount = foodDescriptionItem.discount
+        cartItem.itemPrice = foodDescriptionItem.foodPrice
+        cartItem.itemCount = 1
         
+            CartHandler.fooditem.append(cartItem)
+        
+        dismiss(animated: true, completion: nil)
     }
     
     func setupFoodDescritionView(foodItem:FoodItem){

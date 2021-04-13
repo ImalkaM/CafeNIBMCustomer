@@ -25,3 +25,17 @@ struct FoodItem {
     var image:String
 }
 
+struct CartItem {
+    var itemName: String = ""
+    var itemImgRes: String = ""
+    var discount: Int = 0
+    var itemPrice: Double = 0
+    var itemCount: Int = 0
+    var itemTotal: Double {
+        return Double(itemCount) *  itemPrice
+    }
+//    var discountedPrice: Double {
+//        return itemPrice - (itemPrice * (Double(discount)/100))
+//    }
+}
+

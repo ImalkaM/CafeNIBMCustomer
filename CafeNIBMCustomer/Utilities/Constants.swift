@@ -22,6 +22,8 @@ struct K {
     static let launchToHomeSeauge = "LaunchToHome"
     static let launchToLogin = "LaunchToLogin"
    
+    
+    
     struct FStoreCart {
         static let collectionNameCartTable = "CartCell"
         static let priceField = "price"
